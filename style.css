@@ -1,0 +1,79 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.refresh-btn {
+    background: none;
+    border: solid black 1px;
+    padding: 1rem;
+    width: max(20%, 200px);
+    display: grid;
+    place-items: center;
+    text-transform: capitalize;
+    font-size: 2rem;
+    margin: 2rem auto;
+    cursor: pointer;
+    user-select: none;
+}
+
+.note {
+    margin: 2rem auto;
+    width: max-content;
+    font-size: 2rem;
+    color: #112f8e;
+}
+
+.boxes {
+    display :grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+.box {
+    border: white 2px solid;
+    padding: 3rem;
+    display: grid;
+    font-size: 1.5rem;
+    font-weight: 600;
+    place-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.box::before {
+    content:'Copyed';
+    color: white;
+    display: grid;
+    place-items: center;
+    position: absolute;
+    background: linear-gradient(93.70371119338427deg, rgba(48, 245, 251,1) 0.7613469985358714%,rgba(23, 142, 203,1) 66.35431918008784%);
+    width: 80%;
+    height: 3rem;
+    left: 50%;
+    bottom:90%;
+    transform: translate(-50%,50%);
+    transition: .3s ease;
+    border-radius: 50px;
+    z-index: 2;
+    opacity: 0;
+}
+
+.box.copyed::before{
+    animation: toolTip .8s linear;
+}
+
+@keyframes toolTip {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 50%);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(-50%, 0%);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%);
+    }
+}
