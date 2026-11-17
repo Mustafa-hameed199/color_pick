@@ -16,7 +16,7 @@ let boxes = [...section.children];
 function randomBgd() {
     let chars = '123456789abcdef';
     let randomNumbers = 6;
-    let color = '#'
+    let color = ''
 
     for(let i = 0; i < randomNumbers; i++) {
         let rand = Math.floor(Math.random() * chars.length);
