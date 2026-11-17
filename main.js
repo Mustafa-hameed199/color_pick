@@ -16,7 +16,7 @@ let boxes = [...section.children];
 function randomBgd() {
     let chars = '123456789abcdef';
     let randomNumbers = 6;
-    let color = ''
+    let color = '#'
 
     for(let i = 0; i < randomNumbers; i++) {
         let rand = Math.floor(Math.random() * chars.length);
@@ -36,7 +36,7 @@ function addBgd() {
             boxes.forEach(box => {box.classList.remove('copyed')})
             this.classList.remove('copyed');
             this.classList.add('copyed');
-            navigator.clipboard.writeText(this.innerHTML);
+            navigator.clipboard.writeText(this.innerHTML.replace(/#/g, ''));
         })
     })
 }
